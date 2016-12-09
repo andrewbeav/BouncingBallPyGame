@@ -20,6 +20,8 @@ ball_radius = 15
 ball_x_velocity = 1
 ball_y_velocity = 1
 
+GRAVITY = 0.1
+
 FPS = 100
 clock = pygame.time.Clock()
 
@@ -36,7 +38,7 @@ while not exit_sim:
     pygame.draw.circle(display, blue, (int(ball_x), int(ball_y)), ball_radius)
     pygame.display.update()
 
-    ball_y_velocity += 0.1
+    ball_y_velocity += GRAVITY
 
     if ball_y_velocity > 0:
         ball_y_velocity -= 0.005
